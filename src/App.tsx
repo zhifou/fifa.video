@@ -1,40 +1,33 @@
-import { useState } from "react";
-import example from "./assets/example.json";
-import reactLogo from "./assets/react.svg";
-import "./App.css";
+import React from "react";
+import { ConfigProvider, theme } from "antd";
+// 由于 antd 组件的默认文案是英文，所以需要修改为中文
+import dayjs from "dayjs";
+import "dayjs/locale/zh-cn";
+import zhCN from "antd/locale/zh_CN";
+import Router from "src/routes";
+import "./App.less";
+import "antd/dist/reset.css";
+
+dayjs.locale("zh-cn");
+
+(window as any).global = window;
 
 function App() {
-    const [count, setCount] = useState(0);
-    console.log(8, example);
-
     return (
-        <div className="App">
-            <div>
-                <a href="https://vitejs.dev" target="_blank">
-                    <img src="/vite.svg" className="logo" alt="Vite logo" />
-                </a>
-                <a href="https://reactjs.org" target="_blank">
-                    <img
-                        src={reactLogo}
-                        className="logo react"
-                        alt="React logo"
-                    />
-                </a>
-            </div>
-            <h1>Vite + React</h1>
-            <div className="card">
-                <button onClick={() => setCount((count) => count + 1)}>
-                    count is {count}
-                </button>
-                <p>
-                    Edit <code>src/App.tsx</code> and save to test HMR
-                </p>
-            </div>
-            <div>{example.a}</div>
-            <p className="read-the-docs">
-                Click on the Vite and React logos to learn more
-            </p>
-        </div>
+        <ConfigProvider
+            locale={zhCN}
+            button={{ autoInsertSpace: false }}
+            theme={
+                {
+                    // 1. 单独使用暗色算法
+                    // algorithm: theme.darkAlgorithm,
+                    // 2. 组合使用暗色算法与紧凑算法
+                    // algorithm: [theme.darkAlgorithm, theme.compactAlgorithm],
+                }
+            }
+        >
+            <Router />
+        </ConfigProvider>
     );
 }
 

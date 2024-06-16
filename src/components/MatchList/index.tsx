@@ -1,22 +1,22 @@
-import { FC } from "react";
+import { FC, CSSProperties } from "react";
 // import { useNavigate } from "react-router-dom";
-import classNames from "classnames";
-import { MatchStatus } from "@/types";
-import { VsMatch } from "@/components";
+// import classNames from "classnames";
+// import { MatchStatus } from "@/types";
+import { VsMatch, Card } from "@/components";
 
 import styles from "./style.module.less";
 
 export interface MatchListProps {
     data: any[];
     title: string;
+    style?: CSSProperties;
 }
 
-const MatchList: FC<MatchListProps> = ({ title, data }) => {
+const MatchList: FC<MatchListProps> = ({ style = {}, title, data }) => {
     // const navigate = useNavigate();÷
 
     return (
-        <div className={classNames(styles.match, styles.live)}>
-            <div className={styles.title}>{title}</div>
+        <Card title={title} style={style}>
             <div className={styles.vs}>
                 {(data || []).map((item) => (
                     <VsMatch
@@ -32,7 +32,7 @@ const MatchList: FC<MatchListProps> = ({ title, data }) => {
                     />
                 ))}
             </div>
-        </div>
+        </Card>
     );
 };
 

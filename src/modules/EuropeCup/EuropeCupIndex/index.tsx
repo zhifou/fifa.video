@@ -1,12 +1,12 @@
 import { MatchStatus } from "@/types";
-import { MatchList } from "@/components";
-import { WORLD_CUP_2024_LIST } from "src/modules/Home/config";
+import { MatchTable, MatchList } from "@/components";
+import { WORLD_CUP_2024_LIST } from "src/modules/config";
 
 const EuropeCupIndex = () => {
     console.log("EuropeCupIndex");
     return (
         <div>
-            <MatchList
+            <MatchTable
                 {...{
                     title: "比赛直播",
                     data: WORLD_CUP_2024_LIST.filter((item) =>
@@ -15,6 +15,9 @@ const EuropeCupIndex = () => {
                             MatchStatus.inprogress,
                         ].includes(item.status)
                     ),
+                    style: {
+                        marginBottom: "16px",
+                    },
                 }}
             />
             <MatchList
@@ -23,6 +26,9 @@ const EuropeCupIndex = () => {
                     data: WORLD_CUP_2024_LIST.filter((item) =>
                         [MatchStatus.finish].includes(item.status)
                     ),
+                    style: {
+                        marginBottom: "16px",
+                    },
                 }}
             />
             <MatchList
@@ -33,6 +39,9 @@ const EuropeCupIndex = () => {
                             item.status
                         )
                     ),
+                    style: {
+                        marginBottom: "16px",
+                    },
                 }}
             />
         </div>

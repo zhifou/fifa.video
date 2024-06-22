@@ -34,4 +34,9 @@ export const EUROPE_CUP_LIVES = [
         value: "iqv9w",
         url: "https://www.iqv9w.click/main?channel_code=aann",
     },
+    {
+        label: "免费直播",
+        value: "178tiyu6",
+        url: "https://178tiyu6.com/",
+    },
 ];

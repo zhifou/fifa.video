@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { MatchLive } from "src/components";
-import { WORLD_CUP_2024_LIST } from "src/modules/config";
+import { MatchLive, MatchDetail } from "src/components";
+import { EUROPE_CUP_LIST } from "@/data";
 
 const EuropeCupMatch = () => {
     const params = useParams();
@@ -9,10 +9,22 @@ const EuropeCupMatch = () => {
     const [type, setType] = useState("");
     const [homeTeam, setHomeTeam] = useState("");
     const [guestTeam, setGuestTeam] = useState("");
-    const [signals, setSignals] = useState([]);
+    const [signals, setSignals] = useState<any[]>([]);
     console.log("EuropeCupMatch", params);
 
-    useEffect(() => {}, []);
+    useEffect(() => {
+        const { matchId, year = "" } = params;
+        const match = EUROPE_CUP_LIST[+year].filter(
+            (item) => item.value === matchId
+        )[0];
+        if (match) {
+            setTime(match.time);
+            setType(match.type);
+            setHomeTeam(match.homeTeam);
+            setGuestTeam(match.guestTeam);
+            setSignals(match.lives || []);
+        }
+    }, [params]);
 
     return (
         <div>
@@ -25,6 +37,15 @@ const EuropeCupMatch = () => {
                     signals,
                 }}
             ></MatchLive>
+            <MatchDetail
+                {...{
+                    time,
+                    type,
+                    homeTeam,
+                    guestTeam,
+                    style: { marginTop: "24px" },
+                }}
+            />
         </div>
     );
 };

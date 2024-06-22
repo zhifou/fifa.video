@@ -1,6 +1,8 @@
 import { MatchStatus } from "@/types";
 import { MatchTable, MatchList } from "@/components";
-import { WORLD_CUP_2024_LIST } from "src/modules/config";
+import { EUROPE_CUP_LIST } from "@/data";
+
+const EUROPE_CUP_2024_LIST = EUROPE_CUP_LIST[2024];
 
 const EuropeCupIndex = () => {
     console.log("EuropeCupIndex");
@@ -9,7 +11,7 @@ const EuropeCupIndex = () => {
             <MatchTable
                 {...{
                     title: "比赛直播",
-                    data: WORLD_CUP_2024_LIST.filter((item) =>
+                    data: EUROPE_CUP_2024_LIST.filter((item) =>
                         [
                             MatchStatus.unStarted,
                             MatchStatus.inprogress,
@@ -23,7 +25,7 @@ const EuropeCupIndex = () => {
             <MatchList
                 {...{
                     title: "比赛回放",
-                    data: WORLD_CUP_2024_LIST.filter((item) =>
+                    data: EUROPE_CUP_2024_LIST.filter((item) =>
                         [MatchStatus.finish].includes(item.status)
                     ),
                     style: {
@@ -34,10 +36,8 @@ const EuropeCupIndex = () => {
             <MatchList
                 {...{
                     title: "历史集锦",
-                    data: WORLD_CUP_2024_LIST.filter((item) =>
-                        [MatchStatus.history, MatchStatus.inprogress].includes(
-                            item.status
-                        )
+                    data: EUROPE_CUP_2024_LIST.filter((item) =>
+                        [MatchStatus.history].includes(item.status)
                     ),
                     style: {
                         marginBottom: "16px",

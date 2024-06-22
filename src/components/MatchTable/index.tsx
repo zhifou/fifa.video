@@ -37,7 +37,17 @@ const MatchTable: FC<MatchTableProps> = ({ style = {}, title, data }) => {
                                 {item.guestTeam}
                             </span>
                         </div>
-                        <Button type="primary">正在直播</Button>
+                        <Button
+                            type={
+                                item.status === MatchStatus.unStarted
+                                    ? "default"
+                                    : "primary"
+                            }
+                        >
+                            {item.status === MatchStatus.unStarted
+                                ? "即将开始"
+                                : "正在直播"}
+                        </Button>
                     </Link>
                 ))}
             </div>

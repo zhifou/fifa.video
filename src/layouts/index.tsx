@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useNavigate } from "react-router-dom";
 import { Layout, Menu, theme } from "antd";
 // import { IoIosFootball } from "react-icons/io";
 import { Card } from "src/components";
@@ -104,6 +104,7 @@ const siderStyle: React.CSSProperties = {
 };
 
 const App: React.FC = () => {
+    const navigate = useNavigate();
     const {
         token: { colorBgContainer, borderRadiusLG },
     } = theme.useToken();
@@ -139,12 +140,16 @@ const App: React.FC = () => {
                     <Card title="热门联赛" style={{ marginBottom: "16px" }}>
                         <div className={styles.league}>
                             {items.map((item, index) => (
-                                <Link to={`/${item.key}`} key={index}>
-                                    <div className={styles.leagueItem}>
+                                <div className={styles.leagueItem} key={index}>
+                                    <Link to={`/${item.key}`}>
                                         <img src={item.img} />
-                                        <span>{item.label}</span>
-                                    </div>
-                                </Link>
+                                    </Link>
+                                    <span
+                                        onClick={() => navigate(`/${item.key}`)}
+                                    >
+                                        {item.label}
+                                    </span>
+                                </div>
                             ))}
                         </div>
                     </Card>

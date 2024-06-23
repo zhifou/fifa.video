@@ -38,11 +38,8 @@ const MatchTable: FC<MatchTableProps> = ({ style = {}, title, data }) => {
                             </span>
                         </div>
                         <Button
-                            type={
-                                item.status === MatchStatus.unStarted
-                                    ? "default"
-                                    : "primary"
-                            }
+                            type="primary"
+                            ghost={item.status === MatchStatus.unStarted}
                         >
                             {item.status === MatchStatus.unStarted
                                 ? "即将开始"

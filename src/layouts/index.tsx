@@ -33,7 +33,7 @@ const items = [
     },
     {
         key: "america-cup",
-        label: "美洲杯",
+        label: <Link to="/america-cup">美洲杯</Link>,
         img: AmericaCup,
     },
     {

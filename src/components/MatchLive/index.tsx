@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { Flex, Tag } from "antd";
 import { HiOutlineTv } from "react-icons/hi2";
+import { MatchStatus, MatchStatusMap } from "src/types";
 import { Card } from "src/components";
 import footballBg from "src/assets/football_bg2.jpg";
 import styles from "./style.module.less";
@@ -15,6 +16,7 @@ export interface MatchLiveProps {
     type: string;
     homeTeam: string;
     guestTeam: string;
+    status: MatchStatus;
     signals: Signal[];
 }
 
@@ -23,6 +25,7 @@ const MatchLive: FC<MatchLiveProps> = ({
     type,
     homeTeam,
     guestTeam,
+    status,
     signals = [],
 }) => {
     const signal: any = signals[0] || {};
@@ -44,7 +47,7 @@ const MatchLive: FC<MatchLiveProps> = ({
                         <div className={styles.topicName}>
                             <div className={styles.column}>{homeTeam}</div>
                             <div className={styles.column}>
-                                <span>直播中</span>
+                                <span>{MatchStatusMap[status]}</span>
                                 <span>
                                     {signal.label}
                                     <span>({type})</span>

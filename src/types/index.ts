@@ -19,3 +19,10 @@ export enum MatchStatus {
      */
     history = "history",
 }
+
+export const MatchStatusMap = {
+    [MatchStatus.unStarted]: "即将开始",
+    [MatchStatus.inprogress]: "正在直播",
+    [MatchStatus.finish]: "赛事结束",
+    [MatchStatus.history]: "历史赛事",
+};

@@ -10,6 +10,7 @@ import Layout from "src/layouts";
 const Home = lazy(() => import("src/modules/Home"));
 const WorldCup = lazy(() => import("src/modules/WorldCup"));
 const EuropeCup = lazy(() => import("src/modules/EuropeCup"));
+const AmericaCup = lazy(() => import("src/modules/AmericaCup"));
 const Page404 = lazy(() => import("src/modules/Page404"));
 
 export const routes: RouteObject[] = [
@@ -28,6 +29,10 @@ export const routes: RouteObject[] = [
             {
                 path: "/europe-cup/*",
                 element: <EuropeCup />,
+            },
+            {
+                path: "/america-cup/*",
+                element: <AmericaCup />,
             },
         ],
     },

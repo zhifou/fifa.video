@@ -31,11 +31,12 @@ const VsMatch: FC<VsMatchProps> = ({
             <div>{matchType}</div>
             <div>{matchTime}</div>
             <div>
-                <span>{homeTeam}</span>VS<span>{guestTeam}</span>
+                <span style={{ marginRight: "4px" }}>{homeTeam}</span>VS
+                <span style={{ marginLeft: "4px" }}>{guestTeam}</span>
             </div>
-            <div>
+            {/* <div>
                 <span>视频直播</span>
-            </div>
+            </div> */}
         </div>
     );
 };

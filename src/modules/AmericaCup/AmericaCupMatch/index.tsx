@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { MatchStatus } from "src/types";
 import { MatchLive, MatchDetail } from "src/components";
-import { EUROPE_CUP_LIST } from "@/data";
+import { AMERICA_CUP_LIST } from "@/data";
 
-const EuropeCupMatch = () => {
+const AmericaCupMatch = () => {
     const params = useParams();
     const [time, setTime] = useState("");
     const [type, setType] = useState("");
@@ -12,11 +12,11 @@ const EuropeCupMatch = () => {
     const [guestTeam, setGuestTeam] = useState("");
     const [status, setStatus] = useState(MatchStatus.unStarted);
     const [signals, setSignals] = useState<any[]>([]);
-    console.log("EuropeCupMatch", params);
+    console.log("AmericaCupMatch", params);
 
     useEffect(() => {
         const { matchId, year = "" } = params;
-        const match = EUROPE_CUP_LIST[+year].filter(
+        const match = AMERICA_CUP_LIST[+year].filter(
             (item) => item.value === matchId
         )[0];
         if (match) {
@@ -54,4 +54,4 @@ const EuropeCupMatch = () => {
     );
 };
 
-export default EuropeCupMatch;
+export default AmericaCupMatch;

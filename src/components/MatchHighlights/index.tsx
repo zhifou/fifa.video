@@ -1,25 +1,26 @@
 import { FC, CSSProperties } from "react";
-// import { useNavigate } from "react-router-dom";
-// import classNames from "classnames";
-// import { MatchStatus } from "@/types";
-import { MatchVs, Card } from "@/components";
+import { MatchVideo, Card } from "@/components";
 
 import styles from "./style.module.less";
 
-export interface MatchListProps {
+export interface MatchHighlightsProps {
     data: any[];
     title: string;
     style?: CSSProperties;
 }
 
-const MatchList: FC<MatchListProps> = ({ style = {}, title, data }) => {
+const MatchHighlights: FC<MatchHighlightsProps> = ({
+    style = {},
+    title,
+    data,
+}) => {
     // const navigate = useNavigate();÷
 
     return (
         <Card title={title} style={style}>
-            <div className={styles.vs}>
+            <div className={styles.highlights}>
                 {(data || []).map((item) => (
-                    <MatchVs
+                    <MatchVideo
                         key={item.value}
                         {...{
                             matchId: item.value,
@@ -27,7 +28,9 @@ const MatchList: FC<MatchListProps> = ({ style = {}, title, data }) => {
                             matchTime: item.time,
                             homeTeam: item.homeTeam,
                             guestTeam: item.guestTeam,
-                            url: item.url,
+                            videoUrl: item.videoUrl,
+                            nextUrl: item.url,
+                            poster: item.poster,
                         }}
                     />
                 ))}
@@ -36,4 +39,4 @@ const MatchList: FC<MatchListProps> = ({ style = {}, title, data }) => {
     );
 };
 
-export default MatchList;
+export default MatchHighlights;

@@ -2,7 +2,7 @@ import { FC } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./style.module.less";
 
-export interface VsMatchProps {
+export interface MatchVsProps {
     matchId: string;
     matchType: string;
     matchTime: string;
@@ -13,7 +13,7 @@ export interface VsMatchProps {
     url: string;
 }
 
-const VsMatch: FC<VsMatchProps> = ({
+const MatchVs: FC<MatchVsProps> = ({
     matchId,
     matchType,
     matchTime,
@@ -41,4 +41,4 @@ const VsMatch: FC<VsMatchProps> = ({
     );
 };
 
-export default VsMatch;
+export default MatchVs;

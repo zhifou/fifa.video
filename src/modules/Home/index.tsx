@@ -1,7 +1,7 @@
 // import { useNavigate } from "react-router-dom";
 import classNames from "classnames";
 import { MatchStatus } from "@/types";
-import { MatchList, MatchTable } from "@/components";
+import { MatchList, MatchTable, MatchHighlights } from "@/components";
 import { EUROPE_CUP_LIST } from "@/data";
 
 import styles from "./style.module.less";
@@ -29,6 +29,17 @@ const Home = () => {
             <MatchList
                 {...{
                     title: "比赛回放",
+                    data: EUROPE_CUP_2024_LIST.filter((item) =>
+                        [MatchStatus.finish].includes(item.status)
+                    ),
+                    style: {
+                        marginBottom: "16px",
+                    },
+                }}
+            />
+            <MatchHighlights
+                {...{
+                    title: "比赛集锦",
                     data: EUROPE_CUP_2024_LIST.filter((item) =>
                         [MatchStatus.finish].includes(item.status)
                     ),

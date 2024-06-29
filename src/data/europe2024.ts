@@ -135,6 +135,8 @@ export const _EUROPE_CUP_2024_LIST = [
         homeTeam: "瑞士",
         guestTeam: "德国",
         time: "2024-06-24 03:00",
+        videoUrl: "http://sfl1u1yfb.sabkt.gdipper.com/football/ge/output.mp4",
+        poster: "http://sfl1u1yfb.sabkt.gdipper.com/football/ge/output.jpg",
     },
     {
         homeTeam: "阿尔巴尼亚",
@@ -185,6 +187,48 @@ export const _EUROPE_CUP_2024_LIST = [
         homeTeam: "格鲁吉亚",
         guestTeam: "葡萄牙",
         time: "2024-06-27 03:00",
+        videoUrl: "http://sfl1u1yfb.sabkt.gdipper.com/football/puge/output.mp4",
+        poster: "http://sfl1u1yfb.sabkt.gdipper.com/football/puge/output.jpg",
+    },
+    {
+        homeTeam: "瑞士",
+        guestTeam: "意大利",
+        time: "2024-06-30 00:00",
+    },
+    {
+        homeTeam: "德国",
+        guestTeam: "丹麦",
+        time: "2024-06-30 03:00",
+    },
+    {
+        homeTeam: "英格兰",
+        guestTeam: "斯洛伐克",
+        time: "2024-07-01 00:00",
+    },
+    {
+        homeTeam: "西班牙",
+        guestTeam: "格鲁吉亚",
+        time: "2024-07-01 03:00",
+    },
+    {
+        homeTeam: "法国",
+        guestTeam: "比利时",
+        time: "2024-07-02 00:00",
+    },
+    {
+        homeTeam: "葡萄牙",
+        guestTeam: "斯洛文尼亚",
+        time: "2024-07-02 03:00",
+    },
+    {
+        homeTeam: "罗马尼亚",
+        guestTeam: "荷兰",
+        time: "2024-07-03 00:00",
+    },
+    {
+        homeTeam: "奥地利",
+        guestTeam: "土耳其",
+        time: "2024-07-03 03:00",
     },
 ];
 

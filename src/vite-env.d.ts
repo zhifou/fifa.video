@@ -13,3 +13,4 @@ declare module "@/routes";
 declare module "@/types";
 declare module "@/data";
 declare module "@/utils";
+declare module "@/hooks";

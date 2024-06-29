@@ -40,8 +40,10 @@ const Home = () => {
             <MatchHighlights
                 {...{
                     title: "比赛集锦",
-                    data: EUROPE_CUP_2024_LIST.filter((item) =>
-                        [MatchStatus.finish].includes(item.status)
+                    data: EUROPE_CUP_2024_LIST.filter(
+                        (item) =>
+                            [MatchStatus.finish].includes(item.status) &&
+                            !!item.videoUrl
                     ),
                     style: {
                         marginBottom: "16px",

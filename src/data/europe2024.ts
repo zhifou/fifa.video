@@ -230,6 +230,41 @@ export const _EUROPE_CUP_2024_LIST = [
         guestTeam: "土耳其",
         time: "2024-07-03 03:00",
     },
+    {
+        homeTeam: "西班牙",
+        guestTeam: "德国",
+        time: "2024-07-06 00:00",
+    },
+    {
+        homeTeam: "葡萄牙",
+        guestTeam: "法国",
+        time: "2024-07-06 03:00",
+    },
+    {
+        homeTeam: "英格兰",
+        guestTeam: "瑞士",
+        time: "2024-07-07 00:00",
+    },
+    {
+        homeTeam: "荷兰",
+        guestTeam: "土耳其",
+        time: "2024-07-07 03:00",
+    },
+    {
+        homeTeam: "西班牙",
+        guestTeam: "法国",
+        time: "2024-07-10 03:00",
+    },
+    {
+        homeTeam: "荷兰",
+        guestTeam: "英格兰",
+        time: "2024-07-11 03:00",
+    },
+    {
+        homeTeam: "上半区胜者",
+        guestTeam: "下半区胜者",
+        time: "2024-07-15 03:00",
+    },
 ];
 
 export const EUROPE_CUP_2024_LIST = _EUROPE_CUP_2024_LIST.map((item, index) => {

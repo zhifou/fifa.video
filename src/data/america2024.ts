@@ -126,6 +126,46 @@ const _AMERICA_CUP_2024_LIST = [
         guestTeam: "巴拉圭",
         time: "2024-07-03 09:00",
     },
+    {
+        homeTeam: "阿根廷",
+        guestTeam: "厄瓜多尔",
+        time: "2024-07-05 09:00",
+    },
+    {
+        homeTeam: "委内瑞拉",
+        guestTeam: "加拿大",
+        time: "2024-07-06 09:00",
+    },
+    {
+        homeTeam: "哥伦比亚",
+        guestTeam: "巴拿马",
+        time: "2024-07-07 06:00",
+    },
+    {
+        homeTeam: "乌拉圭",
+        guestTeam: "巴西",
+        time: "2024-07-07 09:00",
+    },
+    {
+        homeTeam: "阿根廷",
+        guestTeam: "加拿大",
+        time: "2024-07-10 08:00",
+    },
+    {
+        homeTeam: "待定",
+        guestTeam: "哥伦比亚",
+        time: "2024-07-11 08:00",
+    },
+    {
+        homeTeam: "待定",
+        guestTeam: "待定",
+        time: "2024-07-14 08:00",
+    },
+    {
+        homeTeam: "待定",
+        guestTeam: "待定",
+        time: "2024-07-15 08:00",
+    },
 ];
 
 export const AMERICA_CUP_2024_LIST = _AMERICA_CUP_2024_LIST.map(
